@@ -1,0 +1,47 @@
+{
+  "name": "job-application-agent",
+  "version": "1.0.0",
+  "description": "A local-first job application automation platform with resume parsing, job search aggregation, scoring, approval queue, and guarded Playwright automation.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon server/index.js",
+    "server:start": "node server/index.js",
+    "client:dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "node --check server/index.js && node --check server/db.js && node --check server/services/resumeParser.js && node --check server/services/matchingEngine.js && node --check server/services/jobSearch.js && node --check server/services/applicationAutomation.js",
+    "test": "node --test server/**/*.test.js"
+  },
+  "keywords": [
+    "jobs",
+    "automation",
+    "resume",
+    "playwright",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "docx-parser": "^1.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "playwright": "^1.49.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

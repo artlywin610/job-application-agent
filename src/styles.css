@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-slate-200 outline-none ring-cyan-300/30 transition focus:ring-4;
+  }
+
+  .btn-primary {
+    @apply rounded-xl bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-300;
+  }
+
+  .btn-muted {
+    @apply rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/10;
+  }
+
+  .btn-danger {
+    @apply rounded-xl bg-rose-400 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-rose-300;
+  }
+}
